@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 14, 2025 at 02:34 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 04-11-2025 a las 17:16:35
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `megastore_transaccional`
+-- Base de datos: `megastore_transaccional`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clientes`
+-- Estructura de tabla para la tabla `clientes`
 --
 
 CREATE TABLE `clientes` (
@@ -36,7 +36,7 @@ CREATE TABLE `clientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `clientes`
+-- Volcado de datos para la tabla `clientes`
 --
 
 INSERT INTO `clientes` (`id_cliente`, `nombre`, `correo`, `genero`, `fecha_nacimiento`) VALUES
@@ -244,7 +244,7 @@ INSERT INTO `clientes` (`id_cliente`, `nombre`, `correo`, `genero`, `fecha_nacim
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empleados`
+-- Estructura de tabla para la tabla `empleados`
 --
 
 CREATE TABLE `empleados` (
@@ -255,7 +255,7 @@ CREATE TABLE `empleados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `empleados`
+-- Volcado de datos para la tabla `empleados`
 --
 
 INSERT INTO `empleados` (`id_empleado`, `nombre`, `puesto`, `id_tienda`) VALUES
@@ -293,7 +293,7 @@ INSERT INTO `empleados` (`id_empleado`, `nombre`, `puesto`, `id_tienda`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `productos`
+-- Estructura de tabla para la tabla `productos`
 --
 
 CREATE TABLE `productos` (
@@ -305,7 +305,7 @@ CREATE TABLE `productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `productos`
+-- Volcado de datos para la tabla `productos`
 --
 
 INSERT INTO `productos` (`id_producto`, `nombre`, `categoria`, `precio`, `stock`) VALUES
@@ -413,7 +413,7 @@ INSERT INTO `productos` (`id_producto`, `nombre`, `categoria`, `precio`, `stock`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tiendas`
+-- Estructura de tabla para la tabla `tiendas`
 --
 
 CREATE TABLE `tiendas` (
@@ -424,7 +424,7 @@ CREATE TABLE `tiendas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tiendas`
+-- Volcado de datos para la tabla `tiendas`
 --
 
 INSERT INTO `tiendas` (`id_tienda`, `nombre`, `ciudad`, `region`) VALUES
@@ -447,7 +447,7 @@ INSERT INTO `tiendas` (`id_tienda`, `nombre`, `ciudad`, `region`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ventas`
+-- Estructura de tabla para la tabla `ventas`
 --
 
 CREATE TABLE `ventas` (
@@ -462,7 +462,7 @@ CREATE TABLE `ventas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `ventas`
+-- Volcado de datos para la tabla `ventas`
 --
 
 INSERT INTO `ventas` (`id_venta`, `fecha`, `id_cliente`, `id_producto`, `id_empleado`, `id_tienda`, `cantidad`, `descuento`) VALUES
@@ -1468,36 +1468,36 @@ INSERT INTO `ventas` (`id_venta`, `fecha`, `id_cliente`, `id_producto`, `id_empl
 (1000, '2024-07-15', 171, 43, 26, 14, 3, 0.09);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `clientes`
+-- Indices de la tabla `clientes`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
--- Indexes for table `empleados`
+-- Indices de la tabla `empleados`
 --
 ALTER TABLE `empleados`
   ADD PRIMARY KEY (`id_empleado`),
   ADD KEY `id_tienda` (`id_tienda`);
 
 --
--- Indexes for table `productos`
+-- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id_producto`);
 
 --
--- Indexes for table `tiendas`
+-- Indices de la tabla `tiendas`
 --
 ALTER TABLE `tiendas`
   ADD PRIMARY KEY (`id_tienda`);
 
 --
--- Indexes for table `ventas`
+-- Indices de la tabla `ventas`
 --
 ALTER TABLE `ventas`
   ADD PRIMARY KEY (`id_venta`),
@@ -1507,51 +1507,51 @@ ALTER TABLE `ventas`
   ADD KEY `id_tienda` (`id_tienda`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `clientes`
+-- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
 
 --
--- AUTO_INCREMENT for table `empleados`
+-- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
   MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `productos`
+-- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
   MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
--- AUTO_INCREMENT for table `tiendas`
+-- AUTO_INCREMENT de la tabla `tiendas`
 --
 ALTER TABLE `tiendas`
   MODIFY `id_tienda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `ventas`
+-- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
   MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `empleados`
+-- Filtros para la tabla `empleados`
 --
 ALTER TABLE `empleados`
   ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`id_tienda`) REFERENCES `tiendas` (`id_tienda`);
 
 --
--- Constraints for table `ventas`
+-- Filtros para la tabla `ventas`
 --
 ALTER TABLE `ventas`
   ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`),
